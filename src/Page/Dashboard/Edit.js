@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import Swal from "sweetalert2";
-function Edit({ emplyoees, selectedEmployee, setEmployees, setIsEditing }) {
+function Edit({ employees, selectedEmployee, setEmployees, setIsEditing }) {
   const id = selectedEmployee.id;
   const [addEmployee, setAddEmployee] = useState({
     firstName: selectedEmployee.firstName,
@@ -10,7 +10,12 @@ function Edit({ emplyoees, selectedEmployee, setEmployees, setIsEditing }) {
     salary: selectedEmployee.salary,
     date: selectedEmployee.date,
   });
-  const handleChange = () => {};
+  const handleChange = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+
+    setAddEmployee({ ...addEmployee, [name]: value });
+  };
 
   //update logic
   const handleUpdate = (e) => {
@@ -29,6 +34,33 @@ function Edit({ emplyoees, selectedEmployee, setEmployees, setIsEditing }) {
         showConfirmButton: true,
       });
     }
+
+    const employee = {
+      id,
+      firstName: addEmployee.firstName,
+      lastName: addEmployee.lastName,
+      email: addEmployee.email,
+      salary: addEmployee.salary,
+      date: addEmployee.date,
+    };
+
+    //loop for editing
+
+    for (let i = 0; i < employees.length; i++) {
+      if (employees[i].id === id) {
+        employees.splice(i, 1, employee);
+        break;
+      }
+    }
+
+    setEmployees(employees);
+    setIsEditing(false);
+    Swal.fire({
+      icon: "success",
+      title: "Updated",
+      showConfirmButton: false,
+      timer: 1500,
+    });
   };
   return (
     <div className="small-container">

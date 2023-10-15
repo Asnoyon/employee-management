@@ -15,10 +15,35 @@ function Dashboard() {
   const [isEditing, setIsEditing] = useState(false);
 
   //method of handleEdit
-  const handleEdit = () => {};
+  const handleEdit = (id) => {
+    const [employee] = employees.filter((employee) => employee.id === id);
+    setSelectedEmployee(employee);
+    setIsEditing(true);
+  };
 
   //method of handleDelete
-  const handleDelete = () => {};
+  const handleDelete = (id) => {
+    Swal.fire({
+      icon: "warning",
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      showCancelButton: true,
+      confirmButtonText: "Yes, delete it",
+      cancelButtonText: "No, Cancel",
+    }).then((result) => {
+      if (result.value) {
+        const [employee] = employees.filter((employee) => employee.id === id);
+        Swal.fire({
+          icon: "success",
+          title: "Deleted",
+          text: `${employee.firstName} ${employee.lastName}'s data has been deleted`,
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        setEmployees(employees.filter((employee) => employee.id !== id));
+      }
+    });
+  };
   return (
     <div className="container">
       {/* This is for List */}
@@ -37,7 +62,7 @@ function Dashboard() {
         <Add
           employees={employees}
           setEmployees={setEmployees}
-          setIsEditing={setIsEditing}
+          setIsAdding={setIsAdding}
         />
       )}
       {/* This is for Editing */}
@@ -46,7 +71,7 @@ function Dashboard() {
           employees={employees}
           setEmployees={setEmployees}
           selectedEmployee={selectedEmployee}
-          setIsAdding={setIsAdding}
+          setIsEditing={setIsEditing}
         />
       )}
     </div>

@@ -378,8 +378,8 @@ html {
 }
 
 body {
-  color: #404040;
-  background: white;
+  color: #F9F6EE;
+  background: #000000;
   font-size: 1rem;
 }
 
@@ -389,6 +389,7 @@ ul,
 dl,
 table {
   margin: 0 0 1.5rem 0;
+  color: white;
 }
 
 ul li ul {
@@ -572,6 +573,13 @@ dd {
 
 .small-container {
   max-width: 800px;
+}
+.small-container input{
+  color: #F9F6EE;
+  background-color: #4A4D60;
+}
+.last-button input{
+  background:#14bdad;
 }
 
 .medium-container {
@@ -792,9 +800,9 @@ button,
 [type="button"] {
   -webkit-appearance: none;
   display: inline-block;
-  border: 1px solid #0366ee;
+  border: 1px solid #14bdad;
   border-radius: 4px;
-  background: #0366ee;
+  background: #14bdad;
   color: #ffffff;
   font-weight: 600;
   font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica,
@@ -816,8 +824,8 @@ button:hover,
 [type="submit"]:hover,
 [type="reset"]:hover,
 [type="button"]:hover {
-  border: 1px solid #0250bc;
-  background: #0250bc;
+  border: 1px solid #016b64;
+  background: #016b64;
   color: #ffffff;
   text-decoration: none;
 }
@@ -834,8 +842,8 @@ button:active,
 [type="reset"]:active,
 [type="button"]:focus,
 [type="button"]:active {
-  border: 1px solid #0250bc;
-  background: #0250bc;
+  border: 1px solid #016b64;
+  background: #016b64;
   color: #ffffff;
   text-decoration: none;
 }
@@ -872,7 +880,7 @@ a.accent-button:active {
 a.muted-button {
   background: transparent;
   border: 1px solid #cdcdcd;
-  color: #4e4e4e;
+  color: #F9F6EE;
 }
 
 .muted-button:hover,
@@ -881,7 +889,7 @@ a.muted-button {
 a.muted-button:hover,
 a.muted-button:focus,
 a.muted-button:active {
-  color: #4e4e4e;
+  color: #F9F6EE;
   border: 1px solid #818181;
   background: transparent;
 }
@@ -1112,7 +1120,8 @@ caption {
 }
 
 .striped-table tbody tr:nth-child(odd) {
-  background-color: #f8f8f8;
+  background-color: #DB545A;
+  
 }
 
 .contain-table {

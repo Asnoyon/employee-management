@@ -106,7 +106,7 @@ function Edit({ employees, selectedEmployee, setEmployees, setIsEditing }) {
           value={addEmployee.date}
           onChange={handleChange}
         />
-        <div style={{ marginTop: "30px" }}>
+        <div style={{ marginTop: "30px" }} className="last-button">
           <input type="submit" value="Update" />
           <input
             style={{ marginLeft: "12px" }}

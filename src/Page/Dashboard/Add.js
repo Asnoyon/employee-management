@@ -111,7 +111,7 @@ function Add({ employees, setEmployees, setIsAdding }) {
           value={addEmployee.date}
           onChange={handleChange}
         />
-        <div style={{ marginTop: "30px" }}>
+        <div style={{ marginTop: "30px" }} className="last-button">
           <input type="submit" value="Add" />
           <input
             style={{ marginLeft: "12px" }}

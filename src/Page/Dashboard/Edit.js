@@ -48,6 +48,7 @@ function Edit({ employees, selectedEmployee, setEmployees, setIsEditing }) {
 
     for (let i = 0; i < employees.length; i++) {
       if (employees[i].id === id) {
+        console.log(i);
         employees.splice(i, 1, employee);
         break;
       }
@@ -65,7 +66,7 @@ function Edit({ employees, selectedEmployee, setEmployees, setIsEditing }) {
   return (
     <div className="small-container">
       <form onSubmit={handleUpdate}>
-        <h1>Add Employee</h1>
+        <h1>Update Employee</h1>
         <label htmlFor="firstName">First Name</label>
         <input
           id="firstName"

@@ -48,9 +48,8 @@ function Edit({ employees, selectedEmployee, setEmployees, setIsEditing }) {
 
     for (let i = 0; i < employees.length; i++) {
       if (employees[i].id === id) {
-        console.log(i);
-        employees.splice(i, 1, employee);
-        break;
+          employees.splice(i, 1, employee);
+          break;
       }
     }
 
